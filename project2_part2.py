@@ -22,7 +22,7 @@ label = df['Classes'].to_numpy(dtype=np.int32)
 feature_names = df[feature_columns].columns.tolist()
 
 
-print("\nBeginning backward elimination search...")
+print("\nBeginning Forward Selection search...")
 best_features, best_acc, history = forward_selection(features, label)
 
 for feature_indices, acc in history:
