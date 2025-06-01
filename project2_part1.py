@@ -39,7 +39,7 @@ def forward_selection(features, label):
                 if ac > best_ac:
                     best_ac = ac
                     best_candidate = i
-        if best_candidate:
+        if best_candidate is not None:
             features_s.append(best_candidate)
         else:  # If there is no more improvement, end early
             break
@@ -88,6 +88,7 @@ def feature_selection(filepath, method):
         print("\nBeginning forward selection search...")
         best_features, best_acc, history = forward_selection(features, label)
     elif method == 2:
+
         print("\nBeginning backward elimination search...")
         best_features, best_acc, history = backward_elimination(features, label)
     else:
